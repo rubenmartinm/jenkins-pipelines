@@ -34,7 +34,7 @@ pipeline {
         stage('Publish') {
             steps {
                 dir('python-application-example') {
-                    sh 'python -m twine upload dist/* --config-gile ~/.pypirc --skip-existing'
+                    sh 'python -m twine upload dist/* --config-file ~/.pypirc --skip-existing'
                 }
             }
         }
