@@ -27,7 +27,6 @@ pipeline {
         stage('Package') {
             steps {
                 dir('python-application-example') {
-                    # para construir los eggs
                     sh 'python -m build'
             }
         }
