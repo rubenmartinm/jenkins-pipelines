@@ -5,6 +5,14 @@ pipeline {
     environment {
         PYPI_CREDENTIALS = credentials('pypi-org')
     }
+    triggers {
+        cron('*/4 * * * *')
+    }
+    options { 
+        disableConcurrentBuilds()   // evita que dos pipelines corran a la vez (por ejemplo para no corromper los estados de terraform)
+        timeout(time: 10, unit: 'MINUTES')
+        timestamps()
+    }
     stages {
         stage('Build') {
             steps {

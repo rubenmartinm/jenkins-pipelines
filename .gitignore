@@ -1,0 +1,6 @@
+*.pyc
+**/.pytest_cache
+**/*egg-info
+**/dist
+.coverage
+docker/jenkins-agents/.pypirc
